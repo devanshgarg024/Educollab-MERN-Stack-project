@@ -46,7 +46,7 @@ The user interface is designed to be intuitive and user-friendly, emphasizing ea
 
 2. **Clone the Repository:**
    ```sh
-   git clone https://github.com/deepakkumartripathi119/Educollab-MERN-Stack-project.git
+   git clone https://github.com/devanshgarg024/Educollab-MERN-Stack-project.git
    cd Educollab
    ```
 
@@ -78,7 +78,7 @@ The user interface is designed to be intuitive and user-friendly, emphasizing ea
 5. **Environment Variables:**
    Make a file named .env in the backend folder, it's content should be:
    ```sh
-    MONGO_URI = "mongodb+srv://Nikhil:KritiDevAllTeam25@cluster0.mxindjp.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_URI = "mongodb+srv://devanshgarg024:Isvwzlry2ZSQ1KD5@educollab.sw3bf.mongodb.net/?retryWrites=true&w=majority"
     CALLBACK_URL = "http://localhost:5500/auth/microsoft/redirect"
     CLIENT_ID = "Your Microsoft Client ID"
     CLIENT_SECRET = "Your Microsoft Client Secret"
