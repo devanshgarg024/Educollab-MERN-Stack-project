@@ -23,7 +23,7 @@ const UpdateProfile = () => {
     try {
       console.log("In update profile: ", userData);
       const response = await fetch(
-        `http://localhost:5500/users/update/${userID}`,
+        `${process.env.REACT_APP_API_URL || "http://localhost:5500"}/users/update/${userID}`,
         {
           method: "PATCH",
           headers: {

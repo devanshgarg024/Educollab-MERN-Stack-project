@@ -7,7 +7,7 @@ const Login = () => {
   const handleSignIn = () => {
     // Redirect to your backend route for Microsoft authentication
     console.log(window.href);
-    window.location.href = "http://localhost:5500/auth/microsoft";
+    window.location.href = `${process.env.REACT_APP_API_URL || "http://localhost:5500"}/auth/microsoft`;
   };
 
   useEffect(() => {

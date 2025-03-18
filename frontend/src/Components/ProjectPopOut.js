@@ -140,7 +140,7 @@ const ProjectPopOut = ({ projectData }) => {
 
   const handleJoinEvent = () => {
 
-    fetch(`http://localhost:5500/projects/addContributor/${projectData._id}/${user._id}`, {
+    fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/addContributor/${projectData._id}/${user._id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ const ProjectPopOut = ({ projectData }) => {
     })};
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://localhost:5500/projects/getComment/${projectData._id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/getComment/${projectData._id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch project comments');
         }
@@ -187,7 +187,7 @@ const ProjectPopOut = ({ projectData }) => {
     }
       console.log(reviewText, rating);
   
-      fetch(`http://localhost:5500/projects/addComment/${projectData._id}/${user._id}`, {
+      fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/addComment/${projectData._id}/${user._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -211,7 +211,7 @@ const ProjectPopOut = ({ projectData }) => {
         console.error('Error:', error);
       })};
       const handleCompleteClick = () => {
-        fetch(`http://localhost:5500/projects/complete/${projectData._id}`, {
+        fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/complete/${projectData._id}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

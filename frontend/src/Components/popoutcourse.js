@@ -22,7 +22,7 @@
 //     useEffect(() => {
 //     const fetchFeedback = async () => {
 //         try {
-//             const response = await fetch(`http://localhost:5500/courses/getfeedback/${course._id}`);
+//             const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/courses/getfeedback/${course._id}`);
 //             const feedback = await response.json();
 //             console.log('All feedback:', feedback.data);
 //             setFeedbackData(feedback.data);
@@ -154,7 +154,7 @@ const Popoutcourse = ({ course }) => {
     useEffect(() => {
     const fetchFeedback = async () => {
         try {
-            const response = await fetch(`http://localhost:5500/courses/getfeedback/${course._id}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/courses/getfeedback/${course._id}`);
             const feedback = await response.json();
             console.log('All feedback:', feedback.data);
             setFeedbackData(feedback.data);
@@ -178,7 +178,7 @@ const Popoutcourse = ({ course }) => {
     }
     
     console.log(reviewText, rating);
-    fetch(`http://localhost:5500/courses/addFeedback/${course._id}/${userid}/add`, {
+    fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/courses/addFeedback/${course._id}/${userid}/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

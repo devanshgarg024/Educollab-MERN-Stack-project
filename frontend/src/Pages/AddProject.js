@@ -14,7 +14,7 @@
 // //     const status = statusElement ? statusElement.textContent : undefined;
 // //     const tags = Array.from(document.querySelectorAll('.tagsinput .tags-selected')).map(tag => tag.textContent);
 // //     try {
-// //       const response = await axios.post(`http://localhost:5500/projects/add`, {
+// //       const response = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/add`, {
 // //         title,
 // //         description,
 // //         githubLink,
@@ -130,7 +130,7 @@
 // //     try {
 // //       console.log("In update profile: ", userData);
 // //       const response = await fetch(
-// //         `http://localhost:5500/users/update/${userID}`,
+// //         `${process.env.REACT_APP_API_URL || "http://localhost:5500"}/users/update/${userID}`,
 // //         {
 // //           method: "PATCH",
 // //           headers: {
@@ -283,7 +283,7 @@
 
 //   const handleSubmit = async (values) => {
 //     try {
-//       const response = await fetch('http://localhost:5500/projects/add', {
+//       const response = await fetch('${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/add', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -393,7 +393,7 @@ const AddProject = () => {
         alert('Per head credits CANNOT be more than 10% of your credit score');
         return;
       }
-      const response = await fetch(`http://localhost:5500/projects/add/${user._id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/add/${user._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ function AnsDoubt({quesid}) {
             return;
         }
         setSubmitClicked(true);
-        fetch(`http://localhost:5500/api/doubts/postans/${userid}`, {
+        fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/api/doubts/postans/${userid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

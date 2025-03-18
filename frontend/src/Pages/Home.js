@@ -26,7 +26,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch("http://localhost:5500/auth/userData");
+        const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/auth/userData`);
         if (response.ok) {
           const userData = await response.json();
           setUserData(userData);
@@ -49,7 +49,7 @@ const Home = () => {
 
     const fetchAllUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5500/users/fetch/all");
+        const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/users/fetch/all`);
         if (response.ok) {
           const allUsersData = await response.json();
           console.log(allUsersData.data);
@@ -103,7 +103,7 @@ const Home = () => {
     const fetchAllProjects = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5500/projects/fetch/all"
+          `${process.env.REACT_APP_API_URL || "http://localhost:5500"}/projects/fetch/all`
         );
         if (response.ok) {
           const projectsData = await response.json();
@@ -123,7 +123,7 @@ const Home = () => {
 
     const fetchAllCourses = async () => {
       try {
-        const response = await fetch("http://localhost:5500/courses/all");
+        const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/courses/all`);
         if (response.ok) {
           const courseData = await response.json();
           setAllCourses(courseData);
@@ -139,7 +139,7 @@ const Home = () => {
 
     const fetchAllDoubts = async () => {
       try {
-        const response = await fetch("http://localhost:5500/doubts/fetch/all");
+        const response = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/doubts/fetch/all`);
         if (response.ok) {
           const doubtsData = await response.json();
           setAllDoubts(doubtsData);

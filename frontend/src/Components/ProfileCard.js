@@ -15,7 +15,7 @@ const ProfileCard = () => {
 
   const handleEditProfileClick = () => {
     const link = document.createElement('a');
-    link.href = 'http://localhost:3000/updateProfile';
+    link.href = '${process.env.REACT_APP_API_URL || "http://localhost:5500"}/updateProfile';
     link.style.display = 'none'; // Hide the link
     document.body.appendChild(link);
     link.click();

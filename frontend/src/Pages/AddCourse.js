@@ -30,7 +30,7 @@ const AddCourse = () => {
     try {
       console.log("new course: ", values);
       const response = await fetch(
-        `http://localhost:5500/courses/add/${userid}/addCourse`,
+        `${process.env.REACT_APP_API_URL || "http://localhost:5500"}/courses/add/${userid}/addCourse`,
         {
           method: "POST",
           headers: {

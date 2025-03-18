@@ -12,7 +12,7 @@ function AskDoubt() {
     const userid=user._id;  
     const handleSubmit = async () => {
         setSubmitClicked(true);
-        await fetch(`http://localhost:5500/api/doubts/postdoubt/${userid}`, {
+        await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5500"}/api/doubts/postdoubt/${userid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
